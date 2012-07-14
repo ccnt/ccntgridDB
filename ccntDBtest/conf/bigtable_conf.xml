@@ -1,0 +1,24 @@
+<configuration>
+	<properties>
+		<name>block.size</name>
+		<value>64000</value>
+	</properties>
+	<properties>
+		<name>order.type</name>
+		<value>UTF8Type</value>
+		<description>
+			UTF8Type
+			OR
+			LongType
+		</description>
+	</properties>
+	<properties>
+		<name>compression.medthod</name>
+		<value>Zippy</value>
+		<description>
+			Zippy
+			OR
+			BMDiff
+		</description>
+	</properties>
+</configuration>
