@@ -8,7 +8,11 @@ public class Table implements TableInterface{
 	public String printErrorInfo(){
 		return errInfo.toString();
 	}
-
+	
+	public Table(String _tableName){
+		this.tableName = _tableName;
+	}
+	
 	@Override
 	public Table openTable(String tableName) {
 		// TODO Auto-generated method stub
