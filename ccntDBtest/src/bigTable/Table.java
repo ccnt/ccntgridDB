@@ -12,39 +12,9 @@ public class Table implements TableInterface{
 	public Table(String _tableName){
 		this.tableName = _tableName;
 	}
-	
-	@Override
-	public Table openTable(String tableName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Table newTable(String tableName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Table dropTable(String tableName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Table set(String key) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Table delete(String key) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Table set(String key, long timeStamp) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -54,6 +24,48 @@ public class Table implements TableInterface{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+	@Override
+	public Table addRow(String rowKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Table deleteRow(String rowKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Table addColumn(String rowKey, String columnKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Table deleteColumn(String rowKey, String columnKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Table set(String rowKey, String columnKey, String value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Table set(String rowKey, String columnKey, String value,
+			long timeStamp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Table remove(String rowKey, String columnKey, long timeStamp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
