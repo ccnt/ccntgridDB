@@ -1,6 +1,7 @@
 package bigTable;
 
 import java.util.HashMap;
+import java.util.Set;
 
 import core.ConstNumber;
 
@@ -18,4 +19,6 @@ public class Row {
 	public Column get(String key){
 		return columnMap.get(key);
 	}
+	
+	public Set<String> getColumnKey(){return columnMap.keySet();}
 }

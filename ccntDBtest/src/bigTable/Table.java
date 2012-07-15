@@ -1,7 +1,7 @@
 package bigTable;
 
 public class Table implements TableInterface{
-	String tableName = null;
+	private String tableName = null;
 	
 	private String errInfo = null;
 	
@@ -13,6 +13,7 @@ public class Table implements TableInterface{
 		this.tableName = _tableName;
 	}
 
+	public String returnTableName(){return tableName;}
 	@Override
 	public Table delete(String key) {
 		// TODO Auto-generated method stub

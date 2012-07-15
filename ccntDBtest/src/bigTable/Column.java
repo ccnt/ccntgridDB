@@ -1,6 +1,7 @@
 package bigTable;
 
 import java.util.HashMap;
+import java.util.Set;
 
 import core.ConstNumber;
 
@@ -14,4 +15,6 @@ public class Column {
 	public void put(String value){
 		dataMap.put(System.currentTimeMillis(), value);
 	}
+	
+	public Set<Long> getTimeStampKey(){return dataMap.keySet();}
 }
