@@ -17,4 +17,8 @@ public class Column {
 	}
 	
 	public Set<Long> getTimeStampKey(){return dataMap.keySet();}
+	
+	public String get(long timeStamp){
+		return dataMap.get(timeStamp);
+	}
 }

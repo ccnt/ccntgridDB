@@ -15,7 +15,7 @@ public class BigTable extends Table{
 		
 	}
 	
-	public int returnRowLength(){return rowMap.size();}
+	public Row getRow(String rowKey){return rowMap.get(rowKey);}
 	
 	public Set<String> getRowKey(){return rowMap.keySet();}
 	

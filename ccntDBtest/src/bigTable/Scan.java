@@ -20,7 +20,7 @@ public class Scan {
 				Iterator<Long> ite3 = keySet3.iterator();
 				while(ite3.hasNext()){
 					long ___tmp = ite3.next();
-					System.out.println("\t\t\t" + ___tmp + ":");
+					System.out.println("\t\t\t" + ___tmp + ":" + tmp.getRow(_tmp).get(__tmp).get(___tmp));
 					
 				}
 			}
