@@ -1,5 +1,5 @@
 package core;
 
 public class ConstNumber {
-	public static final int hashMapInitialCapacity = 16;//1048576;
+	public static final int hashMapInitialCapacity = 32;
 }

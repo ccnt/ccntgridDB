@@ -22,7 +22,15 @@ public class BigTableTest {
 		myBigTable.set("HR部门", "李四", "5000");
 		myBigTable.set("IT部门", "王五", "3800");
 		
+		for (int i  = 0; i < 500000; i++){
+			String name = "ID_"+ String.valueOf(i);
+			//System.out.println(name);
+			myBigTable.addColumn("HR部门", name);
+			myBigTable.set("HR部门", name, "3800");
+		}
+		
 		Scan.printBigTable(myBigTable);
+		Log.commonLog.closeBuffer();
 		
 		Log.stressTest.println("test end  !");
 	}

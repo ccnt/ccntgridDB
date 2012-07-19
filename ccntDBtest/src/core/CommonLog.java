@@ -1,13 +1,20 @@
 package core;
 
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;   
+
+
 
 public class CommonLog {
 	private static CommonLog commonLog = new CommonLog();
 	private static String logFileName = "log\\log.CommonLog.txt";
-	private static FileWriter fw = null;
+	private static FileOutputStream fout = null;
+	private static FileChannel fc = null;
+	private static ByteBuffer buffer = null;
 	
 	private CommonLog(){}
 	
@@ -17,22 +24,33 @@ public class CommonLog {
 	
 	public static void println(String msg){
 		try{
-			fw = new FileWriter(logFileName, true); 
-			SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			String data = sDateFormat.format(new java.util.Date());
-			data += "%% "+msg+"\n";
-			fw.write(data);
-			fw.flush();
-			fw.close();
+			
+			if (fout == null){
+				fout = new FileOutputStream( logFileName ); 
+				fc = fout.getChannel();
+				
+			}
+			
+			buffer = ByteBuffer.allocate( 64 );
+			byte[] tmp = msg.getBytes();
+			//System.out.println(tmp.length);
+			for (int l = 0; l < tmp.length; l++){
+				buffer.put( tmp[l]);
+			}
+			
+			buffer.flip(); 
+			fc.write( buffer );
 		}catch(Exception e){
 			e.printStackTrace();
-		}finally{
-			try {
-				fw.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		}
+	}
+	
+	public static void closeBuffer(){
+		try {
+			fout.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
