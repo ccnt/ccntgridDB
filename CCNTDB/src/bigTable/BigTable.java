@@ -34,5 +34,10 @@ public class BigTable {
 		tableName = t.substring(0);
 	}
 	
-	public void addColumn(){}
+	public boolean putValue(){
+		
+		return false;
+	}
+	
+	public void scanTable(){}
 }
